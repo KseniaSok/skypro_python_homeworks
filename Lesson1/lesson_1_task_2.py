@@ -1,3 +1,3 @@
-my_age = "27"
-my_age = "30"
-print(my_age)
+def age (my_age, i):
+   print(my_age+i)
+age (27,3)
