@@ -1,5 +1,5 @@
 class Address:
-    def __unit__(self, index, city, street, house, flat):
+    def __init__(self, index, city, street, house, flat):
         self.index = index
         self.city = city
         self.street = street
