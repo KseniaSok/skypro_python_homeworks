@@ -4,7 +4,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 #Откройте страницу http://the-internet.herokuapp.com/login
 driver.get("http://the-internet.herokuapp.com/login")
 #В поле username введите значение tomsmith
