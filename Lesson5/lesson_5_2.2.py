@@ -7,9 +7,9 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.keys import Keys
 #Откройте страницу http://uitestingplayground.com/dynamicid
 driver = webdriver.Firefox()
-driver.get("http://uitestingplayground.com/dynamicid")
 #Кликните на синюю кнопку.
 #Запустите скрипт три раза подряд.
 for i in range(3):
+    driver.get("http://uitestingplayground.com/dynamicid")
     bluebutton = driver.find_element(By.CSS_SELECTOR, "button[class='btn btn-primary']").click()
 driver.quit()
