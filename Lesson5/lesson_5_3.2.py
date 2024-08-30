@@ -13,5 +13,8 @@ driver = webdriver.Firefox()
 #Запустите скрипт три раза подряд. 
 for i in range(3):
     driver.get("http://uitestingplayground.com/classattr")
-    bluebutton = driver.find_element(By.CSS_SELECTOR, "button[class='btn-primary']").click()
+    bluebutton = driver.find_element(By.CSS_SELECTOR, ".btn-primary").click()
+    alert = driver.switch_to.alert
+    alert.accept()
+print(f"нажали на кнопку {i} раз(а)")
 driver.quit()
