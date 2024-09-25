@@ -2,13 +2,13 @@ from Lesson7.DataTypes.Pages.MainPage import MainPage
 from Lesson7.DataTypes.Pages.Datafildes import DataFild
 from Lesson7.pytest import chrome_browser
 
-def test(chrome):
-    main_page = MainPage(chrome)
+def test(chrome_browser):
+    main_page = MainPage(chrome_browser)
     main_page.find_fields()
     main_page.filling_in_the_fields()
     main_page.click_button()
 
-    data_fild = DataFild(chrome)
+    data_fild = DataFild(chrome_browser)
     data_fild.find_fields()
     data_fild.get_class_first_name()
     data_fild.get_class_last_name()
