@@ -1,11 +1,12 @@
 from Lesson7.DataTypes.Pages.MainPage import MainPage
 from Lesson7.DataTypes.Pages.Datafildes import DataFild
+from Lesson7.pytest import chrome_browser
 
 def test(chrome):
     main_page = MainPage(chrome)
     main_page.find_fields()
     main_page.filling_in_the_fields()
-    main_page.click_button
+    main_page.click_button()
 
     data_fild = DataFild(chrome)
     data_fild.find_fields()
@@ -14,7 +15,7 @@ def test(chrome):
     data_fild.get_class_address()
     data_fild.get_class_phone()
     data_fild.get_class_city()
-    data_fild.get_class_e_mail
+    data_fild.get_class_e_mail()
     data_fild.get_class_country()
     data_fild.get_class_job_position()
     data_fild.get_class_company()

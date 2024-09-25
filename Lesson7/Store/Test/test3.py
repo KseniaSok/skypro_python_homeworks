@@ -1,5 +1,6 @@
 from Lesson7.Store.Pages.Shopmain import ShopMainPage
 from Lesson7.Store.Pages.Shopcontainer import ShopContainer
+from Lesson7.pytest import chrome_browser
 
 def test(chrome):
     excepted_total = '58.29'
@@ -15,5 +16,5 @@ def test(chrome):
     container.info()
     container.price()
 
-    assert excepted_total in container.price
+    assert excepted_total in container.price()
     print(f'Сумма равна ${container.price()}')

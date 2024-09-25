@@ -1,4 +1,5 @@
 from Lesson7.Calculator.calculator import Calculator
+from Lesson7.pytest import chrome_browser
 
 def test_calculator(chrome):
     calculator = Calculator(chrome)
