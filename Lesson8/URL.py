@@ -1,1 +1,1 @@
-url_hw8 = 'https://x-clients-be.onrender.com'
+base_url = 'https://x-clients-be.onrender.com'
