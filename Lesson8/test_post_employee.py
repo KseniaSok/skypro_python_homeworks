@@ -30,7 +30,7 @@ def test_create_employee():
         "url": "none",
         "phone": "89999999999",
         "birthdate": "2024-09-28T12:21:38.971Z",
-        "isActive": true
+        "isActive": True
         }
     
     my_headers = {}

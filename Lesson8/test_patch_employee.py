@@ -12,13 +12,13 @@ def test_get_employee():
     middleName = "Val"
     email = "oksok@gmail.ru"
     phone = "89999999999"
-    result = api.create_employee(firstName, lastName, middleName, email, phone)
+    result = (firstName, lastName, middleName, email, phone)
     new_id = result["id"]
-    new_employee = api.get_employee(new_id)
+    new_employee = get_employee(new_id)
     
     assert new_employee['id'] == new_id
     
-def edit():
+def edit(self):
         creds = {
         'username' : 'flora',
         'password' : 'nature-fairy'
@@ -29,6 +29,15 @@ def edit():
         my_headers = {}
         my_headers["x-client-token"] = self.token()
         
+        firstName = "Oks"
+        lastName = "Sok"
+        middleName = "Val"
+        email = "oksok@gmail.ru"
+        phone = "89999999999"
+        result = (firstName, lastName, middleName, email, phone)
+        new_id = result["id"]
+        new_employee = get_employee(new_id)
+
         employee = {
         "id": 0,
         "firstName": "Oks",
@@ -39,7 +48,7 @@ def edit():
         "url": "none",
         "phone": "89999999999",
         "birthdate": "2024-09-28T12:21:38.971Z",
-        "isActive": true
+        "isActive": True
         }
         resp = requests.patch(base_url + 'employee/' + str(new_id), 
                               headers=my_headers, json=creds)
@@ -51,7 +60,7 @@ def test_edit():
     middleName = "Val"
     email = "oksok@gmail.ru"
     phone = "89999999999"
-    result = api.create_employee(firstName, lastName, middleName, email, phone)
+    result = (firstName, lastName, middleName, email, phone)
     new_id = result["id"]
 
     new_firstName = "Ok"
@@ -60,7 +69,7 @@ def test_edit():
     new_email = "oksok@mail.ru"
     new_phone = "88899999999"
 
-    edited = api.edit(new_id, new_firstName, new_lastName, new_middleName, new_email, new_phone)
+    edited = edit(new_id, new_firstName, new_lastName, new_middleName, new_email, new_phone)
     assert edited["id"] == new_id
     assert edited["firstName"] == new_firstName
     assert edited["lastName"] == new_lastName

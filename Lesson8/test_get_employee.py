@@ -7,7 +7,7 @@ def test_employee():
     respone_body = resp.json
 
     assert resp.status_code == 200
-    assert len(body) > 0
+    assert len(respone_body) > 0
 
 def test_auth():
     creds = {
