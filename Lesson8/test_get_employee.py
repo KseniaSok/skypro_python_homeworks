@@ -8,20 +8,9 @@ def test_employee():
 
     assert resp.status_code == 200
     assert len(respone_body) > 0
+    return resp.json()
 
-def test_auth():
-    creds = {
-        'username' : 'flora',
-        'password' : 'nature-fairy'
-    }
-    resp = requests.post(base_url + '/auth/login', json=creds)
-    token = resp.json()["userToken"]
-    assert resp.status_code == 201
-
-def test_get_active_employee():
-    resp = requests.get(base_url + '/employee')
-    full_list = resp.json()
-    resp = requests.get(base_url+'/employee?active=true')
-    filtered_list = resp.json()
-    
-    assert len(full_list) > len(filtered_list)
+def get_employees_list(self,companyId):
+    params = {'company': companyId}
+    resp = requests.get(base_url + '/employee', params=params)
+    return resp.json()
